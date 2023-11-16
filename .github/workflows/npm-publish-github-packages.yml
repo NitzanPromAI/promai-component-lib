@@ -22,14 +22,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: 16 # verify the node version
           registry-url: https://npm.pkg.github.com/
-          scope: '@NitzanPromAI'
+          scope: '@NitzanPromAI' #change the scope to the organziation name
 
       - name: Install dependencies
         run: npm install
 
       - name: Publish to GitHub Packages
-        run: npm publish  --access public --scope=@NitzanPromAI
+        run: npm publish  --access public --scope=@NitzanPromAI #change the scope to the organziation name
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
