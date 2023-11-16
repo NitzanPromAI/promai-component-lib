@@ -13,15 +13,21 @@ jobs:
     runs-on: ubuntu-latest
    
     steps:
-      - name: npm-install
+      - name: Checkout code
         uses: actions/checkout@v3
-              actions/setup-node@v3
-        run: npm i
 
-      - name: npm-build        
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Specify your Node.js version here
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
         run: npm run build
 
-      - name: npm-publish        
+      - name: Publish to GitHub Packages
         run: npm publish
         
         env:
