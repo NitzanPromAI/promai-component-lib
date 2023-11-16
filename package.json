@@ -1,18 +1,18 @@
 {
-  "name": "@nitzanpromai/common-libraries",
+  "name": "@nitzanpromai/promai-component-lib",
   "version": "0.0.83",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@NitzanPromAI/"
+    "registry": "https://npm.pkg.github.com/@NitzanPromAI"
   },
   "files": [
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/NitzanPromAI/common-libraries.git"
+    "url": "git+https://github.com/NitzanPromAI/promai-component-lib.git"
   },
   "dependencies": {
     "@mui/icons-material": "^5.14.3",
