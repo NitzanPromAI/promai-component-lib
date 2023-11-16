@@ -1,0 +1,82 @@
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.search-input-wrapper input {
+    display: flex;
+    height: 22px;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 4px 12px;
+    align-items: center;
+    flex: 1 0 0;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #283593;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-input-wrapper input::placeholder {
+    color: #B0BEC5;
+}
+
+.search-input-wrapper input[disabled] {
+    border-color: #CFD8DC;
+    background-color: #FFF;
+}
+
+.search-input-wrapper input[disabled]::placeholder {
+    color: #B0BEC5;
+}
+
+.search-input-wrapper .search-button {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 4px 3px 3px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 1px solid #283593;
+    background-color: white;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.search-input-wrapper .search-button.is-disabled {
+    border-color: #CFD8DC;
+}
+
+ul#search-component-listbox {
+    background-color: #FFF !important;
+}
+
+ul#search-component-listbox li {
+    color: #212121;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.46px;
+}
+ul#search-component-listbox li:hover {
+    background-color: #eee !important;
+}
+ul#search-component-listbox .MuiAutocomplete-option.Mui-focused {
+    background-color: #eee !important;
+}
+.MuiAutocomple-option.Mui-focused {
+    background: #eee !important;
+}
+.search-close-icon {
+    position: absolute !important;
+    right: 38px !important;
+    top: 2px !important;
+}

@@ -1,0 +1,62 @@
+.input-wrapper {
+    border-radius: 2px;
+}
+
+.input-wrapper label {
+    left: -6px;
+    line-height: 18px;
+}
+
+.input-wrapper label.MuiInputLabel-shrink {
+    padding: 0 4px;
+    border-radius: 2px;
+    height: 15px;
+    line-height: 12px;
+}
+
+.input-wrapper label.MuiInputLabel-shrink span {
+    line-height: 12px;
+}
+
+.input-wrapper input {
+    padding: 8px 0px;
+}
+
+.input-wrapper input:-webkit-autofill {
+    background-color: transparent !important;
+}
+
+/* Small input overrides */
+.input--small input {
+    height: 24px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.4px;
+}
+
+.input--small>div {
+    padding: 0 4px !important;
+    box-shadow: 0px 0px 2px 0px rgba(91, 94, 117, 0.30);
+}
+
+.input--small>div>fieldset {
+    border: none;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+/* Medium input overrides */
+.input--medium {
+    height: 24px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.4px;
+}
+
+.input--medium>div {
+    padding: 0 8px
+}
