@@ -7,7 +7,21 @@ import theme from "../../themes/theme";
 
 const InputTextField: FC<InputFieldProps> = (props) => {
   // const [inputValue, setInputValue] = useState("");
-  const { icon, label, variant, sx, inputProps, size, disabled, readOnly = false, max, min, ...rest } = props;
+  const {
+    icon,
+    label,
+    variant,
+    sx,
+    inputProps,
+    size,
+    disabled,
+    readOnly = false,
+    max,
+    min,
+    placeholder,
+    showIcon = false,
+    ...rest
+  } = props;
 
   const inputSizesClassNames = {
     small: "input--small",
@@ -34,8 +48,10 @@ const InputTextField: FC<InputFieldProps> = (props) => {
 
   return (
     <TextField
-      label={!rest.value ? <Typography variant="body5">{label}</Typography> : null}
+      id={rest?.id}
+      label={!rest.value && label ? <Typography variant="body5">{label}</Typography> : null}
       value={rest.value}
+      placeholder={placeholder}
       InputProps={{
         ...inputProps,
         readOnly: readOnly,
@@ -47,7 +63,7 @@ const InputTextField: FC<InputFieldProps> = (props) => {
               "& > svg > path": {
                 stroke: disabled ? theme.palette.text.disabled : theme.palette.primary.main,
               },
-              display: !rest.value ? "block" : "none",
+              display: !rest.value ? "block" : showIcon ? "block" : "none",
             }}
             disabled={disabled}
           >

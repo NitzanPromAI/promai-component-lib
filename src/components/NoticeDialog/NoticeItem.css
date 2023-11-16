@@ -1,0 +1,21 @@
+.notice-item {
+}
+
+.notice-item-title {
+    color: #CD3636;
+    /* font-size: 48px !important; */
+    /* line-height: 50px !important; */
+    font-weight: 500 !important;
+    letter-spacing: 0.15px;
+}
+.p-dialog {
+    color: #283593;
+    /* font-size: 24px !important; */
+    font-weight: 400 !important;
+    letter-spacing: 0.46px;
+}
+.notice-sample-img {
+    width: 351px;
+    height: 48px;
+    flex-shrink: 0;
+}

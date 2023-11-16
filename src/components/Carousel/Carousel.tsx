@@ -10,7 +10,7 @@ import { palette } from "../../themes/palette";
 import { CarouselProp } from "./Carousel.types";
 
 const CarouselMenu = (props: CarouselProp) => {
-  const { isDisabled, menuItems: SIDE_MENU_ITEMS_AS_ARR, selectedMenuItem, handleClick, settings } = props;
+  const { id, isDisabled, menuItems: SIDE_MENU_ITEMS_AS_ARR, selectedMenuItem, handleClick, settings } = props;
   const sliderRef = useRef<any>(null);
 
   const goToNext = () => {
@@ -32,27 +32,29 @@ const CarouselMenu = (props: CarouselProp) => {
   ));
 
   return (
-    <Stack justifyContent={"center"} justifyItems={"center"}>
-      <Stack direction="row" justifyContent={"center"}>
-        <div className="nav-arrow left-arrow">
-          <IconButton onClick={goToPrev}>
-            <ChevronLeftIcon sx={{ color: palette.main.primary }} />
-          </IconButton>
-        </div>
-        <div className={`carousel-menu-container ${isDisabled ? "is-disabled" : ""}`}>
-          <div className="slider">
-            <Slider ref={sliderRef} {...defaultSettings} {...settings}>
-              {buttons}
-            </Slider>
+    <div id={id}>
+      <Stack justifyContent={"center"} justifyItems={"center"}>
+        <Stack direction="row" justifyContent={"center"}>
+          <div className="nav-arrow left-arrow">
+            <IconButton onClick={goToPrev}>
+              <ChevronLeftIcon sx={{ color: palette.main.primary }} />
+            </IconButton>
           </div>
-        </div>
-        <div className="nav-arrow right-arrow">
-          <IconButton className="nav-arrow right-arrow" onClick={goToNext}>
-            <ChevronRightIcon sx={{ color: palette.main.primary }} />
-          </IconButton>
-        </div>
+          <div className={`carousel-menu-container ${isDisabled ? "is-disabled" : ""}`}>
+            <div className="slider">
+              <Slider ref={sliderRef} {...defaultSettings} {...settings}>
+                {buttons}
+              </Slider>
+            </div>
+          </div>
+          <div className="nav-arrow right-arrow">
+            <IconButton className="nav-arrow right-arrow" onClick={goToNext}>
+              <ChevronRightIcon sx={{ color: palette.main.primary }} />
+            </IconButton>
+          </div>
+        </Stack>
       </Stack>
-    </Stack>
+    </div>
   );
 };
 

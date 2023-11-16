@@ -23,7 +23,6 @@ export declare const LetterDescSortIcon: ({ stroke, ...restProps }: SVGProps<SVG
 export declare const NumberAscSortIcon: ({ stroke, ...restProps }: SVGProps<SVGSVGElement>) => import("react/jsx-runtime").JSX.Element;
 export declare const NumberDescSortIcon: ({ stroke, ...restProps }: SVGProps<SVGSVGElement>) => import("react/jsx-runtime").JSX.Element;
 export declare const ListIcon: ({ fill, ...restProps }: SVGProps<SVGSVGElement>) => import("react/jsx-runtime").JSX.Element;
-export declare const GridViewOutlinedIcon: ({ fill, ...restProps }: SVGProps<SVGSVGElement>) => import("react/jsx-runtime").JSX.Element;
 export declare const InputIcon: (props: SVGProps<SVGSVGElement>) => import("react/jsx-runtime").JSX.Element;
 export declare const UploadMask: () => import("react/jsx-runtime").JSX.Element;
 export declare const LineIcon: ({ color }: SVGProps<SVGSVGElement>) => import("react/jsx-runtime").JSX.Element;
@@ -51,3 +50,4 @@ export declare const EraseIcon: () => import("react/jsx-runtime").JSX.Element;
 export declare const TIcon: () => import("react/jsx-runtime").JSX.Element;
 export declare const CloseSearchIcon: () => import("react/jsx-runtime").JSX.Element;
 export declare const ModalCloseIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const AddSingleFlag: () => import("react/jsx-runtime").JSX.Element;

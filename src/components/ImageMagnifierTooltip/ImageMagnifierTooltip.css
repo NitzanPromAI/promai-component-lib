@@ -1,0 +1,6 @@
+.magnifier-image {
+  width: 220px;
+  height: 220px;
+  object-fit: fill;
+  object-position: center;
+}

@@ -13,6 +13,7 @@ interface LoginProps {
 }
 
 type LoginPageProps = {
+  id?: string;
   formErrors: {
     errorMsg: string;
     loginError: boolean;
@@ -26,10 +27,10 @@ type LoginPageProps = {
 };
 
 const LoginPage = (props: LoginPageProps) => {
-  const { formErrors, formData, handleChange, handleSubmit, loading } = props;
+  const { id, formErrors, formData, handleChange, handleSubmit, loading } = props;
 
   return (
-    <div className="login-container">
+    <div id={id} className="login-container">
       <Box
         className="form-wrapper"
         border={2}

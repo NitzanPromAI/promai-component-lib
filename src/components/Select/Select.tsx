@@ -13,7 +13,7 @@ interface Props extends SelectProps {
 
 const CustomSelect = ({ options, label, name, placeholder, value, ...restProps }: Props) => {
   return (
-    <div className="form-group">
+    <div id={restProps?.id} className="form-group">
       {label && (
         <label htmlFor={name}>
           <Typography variant="body5" className="select-label">

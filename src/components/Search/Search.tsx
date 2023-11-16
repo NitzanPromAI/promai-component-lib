@@ -4,14 +4,14 @@ import "./Search.css";
 import { SearchProps } from "./Search.types";
 
 const Search = (props: SearchProps) => {
-  const { placeholder, onChange, value, setValue, disabled, theme, className } = props;
+  const { placeholder, onChange, value, setValue, disabled, theme, ...rest } = props;
 
   const handleClear = () => {
     setValue("");
   };
 
   return (
-    <div className={className}>
+    <div id={rest?.id} className={rest?.className}>
       <input autoFocus placeholder={placeholder} onChange={onChange} value={value} disabled={disabled} />
       {value && (
         <IconButton title="clear" onClick={handleClear} className="search-close-icon">

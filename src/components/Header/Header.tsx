@@ -3,11 +3,12 @@ import { NotificationIcon, UserAvatarIcon } from "../Icon";
 import theme from "../../themes/theme";
 
 import { Button } from "../Button";
-import { UserMenu } from "../UserMenu";
+import UserMenu from "../UserMenu";
 import { HeaderProps } from ".";
 
 const Header = (props: HeaderProps) => {
   const {
+    id,
     children,
     name,
     role,
@@ -41,18 +42,12 @@ const Header = (props: HeaderProps) => {
   };
 
   return (
-    <Box component="header" className={rest?.className} sx={{ ...rest?.style }}>
+    <header id={id} className={rest.className} style={{ ...rest.style }}>
       <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: "100%",
-          width: "100%",
-        }}
+        sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "100%", width: "100%" }}
       >
         <Stack component="div" direction="row" gap="34px" paddingRight="7px">
-          {rest?.leftLogo}
+          {rest.leftLogo}
           {children}
         </Stack>
 
@@ -62,8 +57,9 @@ const Header = (props: HeaderProps) => {
               {showNotification && <NotificationIcon />}
 
               <UserMenu
+                id="user-menu"
                 list={menuList}
-                listHead={rest?.listHead}
+                listHead={rest.listHead}
                 handleOnClick={handleSelected}
                 userInfo={{ name, role }}
                 colors={{
@@ -71,11 +67,7 @@ const Header = (props: HeaderProps) => {
                   default: theme.palette.background.default,
                 }}
               >
-                <Button
-                  size="small"
-                  variant="text"
-                  style={{ padding: 0, minWidth: 32 }}
-                >
+                <Button size="small" variant="text" style={{ padding: 0, minWidth: 32 }}>
                   <UserAvatarIcon />
                 </Button>
               </UserMenu>
@@ -94,12 +86,12 @@ const Header = (props: HeaderProps) => {
           )}
 
           <Stack direction="row" gap={2}>
-            {rest?.promAiLogo}
-            {rest?.rightLogo}
+            {rest.promAiLogo}
+            {rest.rightLogo}
           </Stack>
         </Box>
       </Box>
-    </Box>
+    </header>
   );
 };
 

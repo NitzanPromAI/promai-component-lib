@@ -6,6 +6,7 @@ type ItemProp = {
 };
 
 export interface CarouselProp {
+  id?: string;
   isDisabled: boolean;
   selectedMenuItem: string;
   menuItems: ItemProp[];

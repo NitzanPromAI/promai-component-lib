@@ -18,7 +18,7 @@ const label = { inputProps: { "aria-label": "Switch" } };
 
 export default function CustomSwitch({ onChange, ...props }: SwitchProps) {
   return (
-    <div>
+    <div id={props?.id}>
       <StyledSwitch {...label} onChange={onChange} {...props} />
     </div>
   );

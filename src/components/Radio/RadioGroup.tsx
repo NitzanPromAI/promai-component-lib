@@ -6,9 +6,10 @@ import { FC } from "react";
 import "./radioBtn.css";
 
 const RadioButtonsGroup: FC<RadioGroupProps> = (props) => {
-  const { isRow, childList, value, handleChange, containerStyle } = props;
+  const { id, isRow, childList, value, handleChange, containerStyle } = props;
   return (
     <RadioGroup
+      id={id}
       row={isRow || false}
       aria-labelledby="demo-row-radio-buttons-group-label"
       name="row-radio-buttons-group"

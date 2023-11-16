@@ -15,7 +15,7 @@ interface ProjectProps {
 
 const ProjectItem = ({ id, className, projectName, hasOptions, leftIcon, theme }: ProjectProps) => {
   return (
-    <div className={className} id={id}>
+    <div id={id} className={className}>
       <Stack direction="row" gap={1}>
         {leftIcon}
         <Typography variant="body1" color={theme.textSecondary}>

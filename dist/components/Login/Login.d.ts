@@ -6,6 +6,7 @@ interface LoginProps {
     token?: string;
 }
 type LoginPageProps = {
+    id?: string;
     formErrors: {
         errorMsg: string;
         loginError: boolean;

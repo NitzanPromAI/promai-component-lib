@@ -10,6 +10,7 @@ type HeaderLink = {
   route: string;
 };
 export interface HeaderProps {
+  id?: string;
   style?: React.CSSProperties;
   className?: string;
   children?: React.ReactNode;

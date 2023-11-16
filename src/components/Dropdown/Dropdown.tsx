@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect, MouseEvent } from "react";
-import Box from "@mui/material/Box";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import { Divider, Grow, Paper, Popper, Typography } from "@mui/material";
 import DropdownItem from "./Item";
@@ -7,14 +6,14 @@ import "./Dropdown.css";
 import { DropdownListProps } from ".";
 
 export default function Dropdown(props: DropdownListProps) {
-  const { children, list, setItemOpen, listHeader, handleOnClick } = props;
+  const { id, children, list, setItemOpen, listHeader, handleOnClick } = props;
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLButtonElement>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const prevOpen = useRef(open);
 
   const canBeOpen = open && Boolean(anchorEl);
-  const id = canBeOpen ? "transition-popper" : undefined;
+  const popperId = canBeOpen ? "transition-popper" : undefined;
 
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setOpen((previousOpen) => !previousOpen);
@@ -22,10 +21,7 @@ export default function Dropdown(props: DropdownListProps) {
   };
 
   const handleClose = (event: Event | React.SyntheticEvent) => {
-    if (
-      anchorRef.current &&
-      anchorRef.current.contains(event.target as HTMLElement)
-    ) {
+    if (anchorRef.current && anchorRef.current.contains(event.target as HTMLElement)) {
       return;
     }
     setAnchorEl(null);
@@ -42,7 +38,7 @@ export default function Dropdown(props: DropdownListProps) {
   }, [open]);
 
   return (
-    <Box sx={{ position: "relative" }}>
+    <div id={id} style={{ position: "relative" }}>
       <div
         style={{
           display: "flex",
@@ -60,7 +56,7 @@ export default function Dropdown(props: DropdownListProps) {
       </div>
 
       <Popper
-        id={id}
+        id={popperId}
         open={open}
         anchorEl={anchorEl}
         role={undefined}
@@ -73,8 +69,7 @@ export default function Dropdown(props: DropdownListProps) {
           <Grow
             {...TransitionProps}
             style={{
-              transformOrigin:
-                placement === "bottom-start" ? "left top" : "left bottom",
+              transformOrigin: placement === "bottom-start" ? "left top" : "left bottom",
             }}
           >
             <Paper
@@ -87,10 +82,7 @@ export default function Dropdown(props: DropdownListProps) {
               <ClickAwayListener onClickAway={handleClose}>
                 <div className="dropdown-menu-item">
                   {listHeader && (
-                    <Typography
-                      variant="body2"
-                      sx={{ fontWeight: "bold", paddingX: 3, paddingY: 1 }}
-                    >
+                    <Typography variant="body2" sx={{ fontWeight: "bold", paddingX: 3, paddingY: 1 }}>
                       {listHeader}
                     </Typography>
                   )}
@@ -114,6 +106,6 @@ export default function Dropdown(props: DropdownListProps) {
           </Grow>
         )}
       </Popper>
-    </Box>
+    </div>
   );
 }

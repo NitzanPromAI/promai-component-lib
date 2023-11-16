@@ -55,6 +55,7 @@ export type IProjectAPINode = {
     bomImageId: string | null;
 };
 export interface ProjectSelectionListProp {
+    id?: string;
     list?: any[];
     selected: any | null;
     newProject?: INewProject | null;

@@ -31,7 +31,7 @@ export interface IProjectAPI {
   updatedAt: Date;
   customerId: string;
   configurationId: string | null;
-  nodes: IProjectAPINode[];
+  nodes: any[];
 }
 
 export type IProjectAPINode = {
@@ -58,8 +58,8 @@ export type IProjectAPINode = {
 };
 
 export interface ProjectSelectionListProp {
-  list?: IProjectAPI[];
-  selected: IProjectAPI | null;
+  list?: any[];
+  selected: any | null;
   newProject?: INewProject | null;
   selectedIcon?: React.ReactNode;
   leftIcon?: React.ReactNode;

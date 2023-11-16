@@ -5,7 +5,7 @@ import { Dropdown } from "../Dropdown";
 import { UserAvatarProps } from ".";
 
 const IndexView = (props: UserAvatarProps) => {
-  const { children, list, listHead, handleOnClick, colors, userInfo } = props;
+  const { id, children, list, listHead, handleOnClick, colors, userInfo } = props;
 
   const [open, setOpen] = useState(false);
 
@@ -14,13 +14,8 @@ const IndexView = (props: UserAvatarProps) => {
   };
 
   return (
-    <Stack direction="row" gap={1}>
-      <Dropdown
-        setItemOpen={handleSetOpen}
-        list={list}
-        listHeader={listHead}
-        handleOnClick={handleOnClick}
-      >
+    <Stack id={id} direction="row" gap={1}>
+      <Dropdown setItemOpen={handleSetOpen} list={list} listHeader={listHead} handleOnClick={handleOnClick}>
         <Box
           sx={{
             display: "flex",
@@ -39,7 +34,7 @@ const IndexView = (props: UserAvatarProps) => {
         </Box>
       </Dropdown>
 
-      <UserInfo info={userInfo} />
+      <UserInfo id="user-info" info={userInfo} />
     </Stack>
   );
 };

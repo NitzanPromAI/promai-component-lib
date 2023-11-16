@@ -1,6 +1,7 @@
 import { HeaderDropdownItemProp } from "../Header";
 
 export interface UserAvatarProps {
+  id?: string;
   children: React.ReactNode;
   list?: HeaderDropdownItemProp[];
   listHead?: string;
@@ -13,6 +14,7 @@ export interface UserAvatarProps {
 }
 
 export interface IUserInfoProps {
+  id?: string;
   name?: string;
   role?: string;
 }

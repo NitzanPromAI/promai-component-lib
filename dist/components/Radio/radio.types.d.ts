@@ -6,6 +6,7 @@ type children = {
     id?: string | number;
 };
 export interface RadioGroupProps {
+    id?: string;
     childList: children[];
     disabled?: boolean;
     isRow?: boolean;

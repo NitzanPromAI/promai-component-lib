@@ -1,2 +1,2 @@
-export { default as UserMenu } from "./IndexView";
+export { default } from "./IndexView";
 export * from "./Usermenu.types";

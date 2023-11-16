@@ -13,6 +13,7 @@ export interface InputFieldProps extends Omit<React.InputHTMLAttributes<HTMLInpu
   min?: number;
   error?: boolean;
   helperText?: React.ReactNode;
+  showIcon?: boolean;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   inputProps?: Partial<FilledInputProps> | Partial<OutlinedInputProps> | Partial<InputProps>;
 }

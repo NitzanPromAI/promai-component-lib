@@ -11,7 +11,7 @@ import { ProjectSelectionListProp } from ".";
 import "./ProjectSelection.css";
 
 const ProjectSelection = (props: ProjectSelectionListProp) => {
-  const { list, selected, selectedIcon, leftIcon, addProjectIcon, newProject, theme, handleItemClick } = props;
+  const { id, list, selected, selectedIcon, leftIcon, addProjectIcon, newProject, theme, handleItemClick } = props;
 
   const StyledMenu = styled((props: MenuProps) => (
     <Menu
@@ -74,7 +74,7 @@ const ProjectSelection = (props: ProjectSelectionListProp) => {
   };
 
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box id={id} sx={{ position: "relative" }}>
       <Button
         className="project-selection"
         aria-controls="project-selection"

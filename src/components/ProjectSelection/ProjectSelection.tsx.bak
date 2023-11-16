@@ -126,16 +126,18 @@ const ProjectSelection = (props: ProjectSelectionListProp) => {
           </StyledMenuItem>
         ))}
 
-        <StyledMenuItem onClick={() => handleMenuClick(newProject)} className="project-view-menuItem" disableRipple>
-          <ProjectItem
-            id={newProject.id}
-            className="project-item-wrapper"
-            projectName={newProject.name}
-            hasOptions={newProject.hasOptions}
-            leftIcon={addProjectIcon}
-            theme={{ textSecondary: theme.textSecondary }}
-          />
-        </StyledMenuItem>
+        {newProject && (
+          <StyledMenuItem onClick={() => handleMenuClick(newProject)} className="project-view-menuItem" disableRipple>
+            <ProjectItem
+              id={newProject?.id}
+              className="project-item-wrapper"
+              projectName={newProject?.name}
+              hasOptions={newProject?.hasOptions}
+              leftIcon={addProjectIcon}
+              theme={{ textSecondary: theme.textSecondary }}
+            />
+          </StyledMenuItem>
+        )}
       </StyledMenu>
     </Box>
   );
